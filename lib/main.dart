@@ -21,7 +21,7 @@ class NewsApp extends StatelessWidget {
       /* -------------------------------------------------------------------------- */
       routes: {
         /* ---------------------------- homescreen route ---------------------------- */
-        HomeScreen.routeName: (_) => HomeScreen(),
+        HomeScreen.routeName: (_) => const HomeScreen(),
         /* -------------------------- Settings Screen ROUTE ------------------------- */
         SettingsScreen.routeName: (_) => const SettingsScreen(),
         /* ------------------- Categories Details Screen RoutName ------------------- */
