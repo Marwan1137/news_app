@@ -5,60 +5,66 @@ import 'package:news_app/app_theme.dart';
 import 'package:news_app/categories/category_item.dart';
 import 'package:news_app/categories/category_details.dart';
 import 'package:news_app/models/category_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class categoriesGrid extends StatelessWidget {
   const categoriesGrid({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<CategoryModel> categories = [
-      const CategoryModel(
-        id: '1',
-        name: 'Sports',
-        imageName: 'assets/ball.png',
-        color: appTheme.red,
-      ),
-      const CategoryModel(
-        id: '2',
-        name: 'Politics',
-        imageName: 'assets/Politics.png',
-        color: appTheme.blue,
-      ),
-      const CategoryModel(
-        id: '3',
-        name: 'Health',
-        imageName: 'assets/health.png',
-        color: appTheme.pink,
-      ),
-      const CategoryModel(
-        id: '4',
-        name: 'Business',
-        imageName: 'assets/business.png',
-        color: appTheme.yellowishBrown,
-      ),
-      const CategoryModel(
-        id: '5',
-        name: 'Environment',
-        imageName: 'assets/environment.png',
-        color: appTheme.babyblue,
-      ),
-      const CategoryModel(
-        id: '6',
-        name: 'Science',
-        imageName: 'assets/science.png',
-        color: appTheme.yellow,
-      ),
-    ];
+    List<CategoryModel> getCategories(BuildContext context) {
+      return [
+        CategoryModel(
+          id: 'sports',
+          name: AppLocalizations.of(context)!.sports,
+          imageName: 'assets/ball.png',
+          color: AppTheme.red,
+        ),
+        CategoryModel(
+          id: 'technology',
+          name: AppLocalizations.of(context)!.technology,
+          imageName: 'assets/technology2.png',
+          color: AppTheme.blue,
+        ),
+        CategoryModel(
+          id: 'health',
+          name: AppLocalizations.of(context)!.health,
+          imageName: 'assets/health.png',
+          color: AppTheme.pink,
+        ),
+        CategoryModel(
+          id: 'business',
+          name: AppLocalizations.of(context)!.business,
+          imageName: 'assets/business.png',
+          color: AppTheme.yellowishbrown,
+        ),
+        CategoryModel(
+          id: 'entertainment',
+          name: AppLocalizations.of(context)!.entertainment,
+          imageName: 'assets/entertainment.png',
+          color: AppTheme.babyblue,
+        ),
+        CategoryModel(
+          id: 'science',
+          name: AppLocalizations.of(context)!.science,
+          imageName: 'assets/science.png',
+          color: AppTheme.yellow,
+        ),
+      ];
+    }
+
+    final List<CategoryModel> categories = getCategories(context);
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Pick Your category of interest',
+          AppLocalizations.of(context)!.pickYourCategory,
           style: Theme.of(context)
               .textTheme
               .titleLarge
-              ?.copyWith(color: appTheme.navy),
+              ?.copyWith(color: AppTheme.navy),
         ),
         const SizedBox(
           height: 40,
@@ -75,10 +81,14 @@ class categoriesGrid extends StatelessWidget {
                 Navigator.pushReplacementNamed(
                   context,
                   CategorieDetailsScreen.routName,
-                  arguments: categories[index].name,
+                  arguments: {
+                    'categoryId': categories[index].id,
+                    'categoryTitle': categories[index].name,
+                  },
                 );
               },
               child: CategoryItem(
+                id: categories[index].id,
                 title: categories[index].name,
                 backgroundColor: categories[index].color,
                 iconPath: categories[index].imageName,

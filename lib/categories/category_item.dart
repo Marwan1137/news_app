@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {
+  final String id;
   final String title;
   final Color backgroundColor;
   final String iconPath;
@@ -8,6 +9,7 @@ class CategoryItem extends StatelessWidget {
 
   const CategoryItem({
     super.key,
+    required this.id,
     required this.title,
     required this.backgroundColor,
     required this.iconPath,
