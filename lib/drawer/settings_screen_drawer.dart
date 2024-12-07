@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/app_theme.dart';
 import 'package:news_app/homescreen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsScreenDrawer extends StatelessWidget {
   const SettingsScreenDrawer({super.key});
@@ -12,7 +13,7 @@ class SettingsScreenDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: const BoxDecoration(
-              color: appTheme.primary,
+              color: AppTheme.primary,
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(55),
                 bottomRight: Radius.circular(55),
@@ -20,7 +21,7 @@ class SettingsScreenDrawer extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                'News App!',
+                AppLocalizations.of(context)!.settings,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
@@ -32,12 +33,12 @@ class SettingsScreenDrawer extends StatelessWidget {
             leading: const Icon(
               Icons.menu_outlined,
               size: 40,
-              color: appTheme.black,
+              color: AppTheme.black,
             ),
             title: Text(
-              'Categories',
+              AppLocalizations.of(context)!.categories,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold, color: appTheme.black),
+                  fontWeight: FontWeight.bold, color: AppTheme.black),
             ),
             onTap: () {
               Navigator.pushReplacementNamed(context, HomeScreen.routeName);
@@ -47,12 +48,12 @@ class SettingsScreenDrawer extends StatelessWidget {
             leading: const Icon(
               Icons.settings,
               size: 40,
-              color: appTheme.black,
+              color: AppTheme.black,
             ),
             title: Text(
-              'Settings',
+              AppLocalizations.of(context)!.settings,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold, color: appTheme.black),
+                  fontWeight: FontWeight.bold, color: AppTheme.black),
             ),
             onTap: () {
               // Navigator.pushNamed(context, SettingsScreen.routeName);

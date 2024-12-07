@@ -12,19 +12,22 @@ class TabItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 85,
       height: 40,
       decoration: BoxDecoration(
-          color: isSelected ? appTheme.primary : appTheme.white,
-          border: Border.all(color: appTheme.primary),
-          borderRadius: BorderRadius.circular(20)),
-      child: Center(
-        child: Text(
-          sourceName,
-          style: TextStyle(
-            color: isSelected ? appTheme.white : appTheme.primary,
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
+        color: isSelected ? AppTheme.primary : AppTheme.white,
+        border: Border.all(color: AppTheme.primary),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: Center(
+          child: Text(
+            sourceName,
+            style: TextStyle(
+              color: isSelected ? AppTheme.white : AppTheme.primary,
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
       ),

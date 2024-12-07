@@ -12,7 +12,11 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       drawer: const HomeScreenDrawer(),
       appBar: AppBar(
-        title: const Text('News App'),
+        toolbarHeight: 100,
+        title: Text(
+          'News App',
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 25),
+        ),
       ),
       body: Container(
         decoration: const BoxDecoration(
