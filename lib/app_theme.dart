@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 
 class appTheme {
@@ -11,6 +13,7 @@ class appTheme {
   static const Color yellowishBrown = Color(0xFFCF7E48);
   static const Color pink = Color(0xFFED1E79);
   static const Color yellow = Color(0xFFF2D352);
+  static const Color grey = Color(0xFF79828B);
 
   static ThemeData lightTheme = ThemeData(
     primaryColor: primary,
@@ -21,7 +24,7 @@ class appTheme {
         color: white,
       ),
     ),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       backgroundColor: primary,
       centerTitle: true,
       titleTextStyle:

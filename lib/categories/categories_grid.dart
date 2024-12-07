@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:news_app/app_theme.dart';
 import 'package:news_app/categories/category_item.dart';
@@ -10,37 +12,37 @@ class categoriesGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<CategoryModel> categories = [
-      CategoryModel(
+      const CategoryModel(
         id: '1',
         name: 'Sports',
         imageName: 'assets/ball.png',
         color: appTheme.red,
       ),
-      CategoryModel(
+      const CategoryModel(
         id: '2',
         name: 'Politics',
         imageName: 'assets/Politics.png',
         color: appTheme.blue,
       ),
-      CategoryModel(
+      const CategoryModel(
         id: '3',
         name: 'Health',
         imageName: 'assets/health.png',
         color: appTheme.pink,
       ),
-      CategoryModel(
+      const CategoryModel(
         id: '4',
         name: 'Business',
         imageName: 'assets/business.png',
         color: appTheme.yellowishBrown,
       ),
-      CategoryModel(
+      const CategoryModel(
         id: '5',
         name: 'Environment',
         imageName: 'assets/environment.png',
         color: appTheme.babyblue,
       ),
-      CategoryModel(
+      const CategoryModel(
         id: '6',
         name: 'Science',
         imageName: 'assets/science.png',
